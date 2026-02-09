@@ -4,22 +4,47 @@
     <meta charset="UTF-8">
     <title>Happy Birthday, Abhilipsa!</title>
     <style>
-         body { 
-         font-family: 'Courier New', monospace; 
-            background: #000;          /* Black background */
-            color: #ff0000;            /* Red text */
-            text-align: center; 
+        body { 
+            font-family: 'Courier New', monospace; 
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;  
+            text-align: center;
             padding: 50px;
+            position: relative;
+            margin: 0;
+        }
 
+        /* Optional: Dark overlay so text pops better */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* semi-transparent black */
+            z-index: 0;
         }
+
         .wish { 
-           font-size: 2em;
-            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4d4d; /* red glow */
-            margin: 20px;
-            line-height: 1.6;
+            font-size: 3em;
+            color: #ff6666;           /* softer red */
+            text-shadow: 
+                0 0 3px #ff6666,      /* soft inner glow */
+                0 0 8px #ff9999;      /* subtle outer glow */
+            margin: 40px 20px;
+            line-height: 1.4;
+            position: relative;       /* so it appears above overlay */
+            z-index: 1;
+            animation: glow 2s ease-in-out infinite alternate;
         }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 3px #ff6666, 0 0 8px #ff9999; }
+            50% { text-shadow: 0 0 5px #ff6666, 0 0 12px #ff9999; }
+            100% { text-shadow: 0 0 3px #ff6666, 0 0 8px #ff9999; }
+        }
+
         button { 
-            background: #ff69b4; /* Pink */
+            background: #ff69b4; 
             color: #000; 
             border: none; 
             padding: 10px 20px; 
@@ -27,29 +52,23 @@
             margin: 10px; 
             cursor: pointer; 
             box-shadow: 0 0 10px #ff69b4;
+            transition: 0.3s;
+            position: relative;
+            z-index: 1;
         }
+
         button:hover { 
-            background: #ffeb3b; /* Yellow */
+            background: #ffeb3b; 
             box-shadow: 0 0 15px #ffeb3b;
         }
-        body { 
-    font-family: 'Courier New', monospace; 
-    background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover;  /* Makes the image cover entire page */
-    color: #fff;             /* Text color white so it stands out */
-    text-align: center;
-    padding: 50px;
-}
     </style>
 </head>
 <body>
-    <div class="wish">Happy Birthday PUJA NANI(MAISHI) 🎉</div>
+    <div class="wish">Happy Birthday PUJA NANI (MAINSHI) 🎉</div>
    
     <button onclick="window.location.href='gallery.html'">Memories</button>
     <button onclick="window.location.href='thanks.html'">Go Next</button>
 </body>
-
 </html>
-
 
 
